@@ -1,0 +1,18 @@
+{
+    "name": "adventurers-ledger",
+    "version": "1.0.0",
+    "description": "Static fantasy RPG character status sheet and dice roller for a DevOps assignment",
+    "main": "script.js",
+    "scripts": {
+        "lint": "eslint ."
+    },
+    "keywords": [
+        "devops",
+        "eslint",
+        "static-site"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "eslint": "^8.57.0"
+    }
+}

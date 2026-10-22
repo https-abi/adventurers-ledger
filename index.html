@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventurer's Ledger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Adventurer's Ledger</h1>
+        <p class="tagline">A cozy status sheet and dice tray for the weary traveler</p>
+    </header>
+
+    <main class="layout">
+        <section class="card character-card" aria-labelledby="char-heading">
+            <h2 id="char-heading">Character Status</h2>
+
+            <dl class="char-info">
+                <div>
+                    <dt>Name</dt>
+                    <dd id="char-name">Elowen Thistledown</dd>
+                </div>
+                <div>
+                    <dt>Class</dt>
+                    <dd id="char-class">Wandering Druid</dd>
+                </div>
+                <div>
+                    <dt>Level</dt>
+                    <dd id="char-level">5</dd>
+                </div>
+            </dl>
+
+            <div class="hp-block">
+                <div class="hp-label">
+                    <span>Hit Points</span>
+                    <span id="hp-text">32 / 40</span>
+                </div>
+                <div class="hp-bar" role="progressbar" aria-valuemin="0" aria-valuemax="40" aria-valuenow="32"
+                    id="hp-bar">
+                    <div class="hp-fill" id="hp-fill"></div>
+                </div>
+                <div class="hp-controls">
+                    <button type="button" class="btn btn-danger" id="hp-minus">- 1 HP</button>
+                    <button type="button" class="btn btn-heal" id="hp-plus">+ 1 HP</button>
+                    <button type="button" class="btn btn-ghost" id="level-up">Level Up</button>
+                </div>
+            </div>
+
+            <ul class="stats">
+                <li><span class="stat-name">STR</span><span class="stat-val">9</span></li>
+                <li><span class="stat-name">DEX</span><span class="stat-val">14</span></li>
+                <li><span class="stat-name">CON</span><span class="stat-val">13</span></li>
+                <li><span class="stat-name">INT</span><span class="stat-val">12</span></li>
+                <li><span class="stat-name">WIS</span><span class="stat-val">17</span></li>
+                <li><span class="stat-name">CHA</span><span class="stat-val">11</span></li>
+            </ul>
+        </section>
+
+        <section class="card dice-card" aria-labelledby="dice-heading">
+            <h2 id="dice-heading">Dice Tray</h2>
+
+            <div class="dice-options">
+                <label>
+                    Count
+                    <input type="number" id="dice-count" min="1" max="20" value="1">
+                </label>
+                <label>
+                    Modifier
+                    <input type="number" id="dice-mod" min="-20" max="20" value="0">
+                </label>
+            </div>
+
+            <div class="dice-buttons" id="dice-buttons">
+                <button type="button" class="btn btn-dice" data-sides="4">d4</button>
+                <button type="button" class="btn btn-dice" data-sides="6">d6</button>
+                <button type="button" class="btn btn-dice" data-sides="8">d8</button>
+                <button type="button" class="btn btn-dice" data-sides="10">d10</button>
+                <button type="button" class="btn btn-dice" data-sides="12">d12</button>
+                <button type="button" class="btn btn-dice" data-sides="20">d20</button>
+                <button type="button" class="btn btn-dice" data-sides="100">d100</button>
+            </div>
+
+            <div class="last-roll" aria-live="polite">
+                <span class="last-roll-label">Last roll</span>
+                <span class="last-roll-value" id="last-roll">-</span>
+            </div>
+        </section>
+
+        <section class="card log-card" aria-labelledby="log-heading">
+            <div class="log-header">
+                <h2 id="log-heading">Combat Log</h2>
+                <button type="button" class="btn btn-ghost" id="clear-log">Clear</button>
+            </div>
+            <ol class="log" id="combat-log" aria-live="polite">
+                <li class="log-empty">The tavern is quiet. Roll some dice.</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Built for a DevOps assignment. May your rolls be ever in your favor.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
