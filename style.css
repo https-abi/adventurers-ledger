@@ -344,3 +344,18 @@ input:focus-visible {
         font-size: 1.8rem;
     }
 }
+
+.welcome-banner {
+    max-width: 640px;
+    margin: 0.8rem auto 0;
+    padding: 0.5rem 1rem;
+    font-style: italic;
+    color: var(--parchment);
+    background: var(--forest-deep);
+    border: 2px solid var(--bronze-deep);
+    border-radius: 10px;
+}
+
+.welcome-banner:empty {
+    display: none;
+}
