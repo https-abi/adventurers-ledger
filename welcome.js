@@ -3,7 +3,7 @@
 const VISIT_KEY = 'ledgerVisits';
 
 function getTimeOfDay(hour) {
-    if (hour >= 5 && hour <= 10) {
+    if (hour >= 5 && hour <= 11) {
         return 'morning';
     }
     if (hour >= 12 && hour <= 16) {
